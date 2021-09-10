@@ -26,3 +26,10 @@ const TO = 'BTC';
 const ORDERSIZE = 0.01;
 ...
 ```
+
+5. at the moment the bot buys every wednesday, the schedule is based on UNIX cronjobs (https://crontab.guru/)
+```js
+...
+const SCHEDULE = '0 0 * * 2';
+...
+```
