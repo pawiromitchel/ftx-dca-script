@@ -41,7 +41,7 @@ async function main(_from, _to, _size) {
                 const acceptOrder = await ftx.acceptQuote(quoteId);
                 const { success } = acceptOrder;
                 if (success) {
-                    console.log(`[i] Converted ${_size} ${fromCoin} to ${proceeds} ${toCoin}`);
+                    console.log(`[i] Converted ${_size} ${fromCoin} to ${proceeds.toFixed(8)} ${toCoin}`);
                 } else {
                     console.error('[x] Did not accept the QuoteID');
                 }
