@@ -22,7 +22,7 @@ const SCHEDULE = '0 0 * * 2';
 async function main(_from, _to, _size) {
     // if all the arguments are met
     if (arguments.length) {
-        console.log('[i] Script ran at: ', new Date().toString())
+        console.log('===', new Date().toString(), '===')
         // get the exchange rate of the swap you want to do
         const getPrice = await FTX_INSTANCE.getPrice(`${_to}/${_from}`);
         if (getPrice) {
