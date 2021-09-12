@@ -19,7 +19,7 @@
   "homepage": "https://github.com/pawiromitchel/ftx-dca-bot#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "ftx-api-rest": "^0.0.7",
+    "ftx-api-rest-extended": "^1.0.0",
     "node-cron": "^3.0.0"
   }
 }

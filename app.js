@@ -1,6 +1,6 @@
 require("dotenv").config();
 const cron = require('node-cron');
-const FTX = require('./ftx.class');
+const FTX = require('ftx-api-rest-extended');
 
 const creds = {
     'key': process.env.KEY,
