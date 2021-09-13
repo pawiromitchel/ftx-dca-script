@@ -23,35 +23,8 @@ async function main(_from, _to, _size) {
     // if all the arguments are met
     if (arguments.length) {
         console.log('===', new Date().toString(), '===')
-        // get the exchange rate of the swap you want to do
-        const getPrice = await FTX_INSTANCE.getPrice(`${_to}/${_from}`);
-        if (getPrice) {
-            const { price, quoteCurrency } = getPrice.result;
-            console.log(`[i] Exchange rate: ${price} ${quoteCurrency}`);
-        }
-        // set up the conversion
-        const convert = await FTX_INSTANCE.convert(_from, _to, _size);
-        if (convert) {
-            const { quoteId } = convert.result;
-            if (quoteId) {
-                console.log(`[i] QuoteId: ${quoteId}`);
-                // get the information about the conversion you are about to do
-                const info = await FTX_INSTANCE.getQuoteInfo(quoteId);
-                const { fromCoin, toCoin, proceeds } = info.result;
-                // accept the conversion
-                const acceptOrder = await FTX_INSTANCE.acceptQuote(quoteId);
-                const { success } = acceptOrder;
-                if (success) {
-                    console.log(`[i] Converted ${_size} ${fromCoin} to ${proceeds.toFixed(8)} ${toCoin}`);
-                } else {
-                    console.error('[x] Did not accept the QuoteID');
-                }
-            } else {
-                console.error('[x] Did not receive a quote ID');
-            }
-        } else {
-            console.error('[x] Failed to convert');
-        }
+        const convert = await FTX_INSTANCE.createOTCOrder(_from, _to, _size);
+        if (convert) console.log(convert)
     } else {
         console.error('[x] Please give the correct arguments');
     }
