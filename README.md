@@ -1,5 +1,6 @@
 # Simple DCA script for FTX
-A simple script to automate the buying or selling process. Just run the script on your desired server and forget about it 💤
+A simple script to automate the buying or selling process.    
+Just run the script on your desired server and forget about it 💤
 
 ## Made with
 - [ftx-api-rest-extended](https://www.npmjs.com/package/ftx-api-rest-extended), for interacting with the FTX Exchange
