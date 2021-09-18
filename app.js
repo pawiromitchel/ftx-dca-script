@@ -11,13 +11,10 @@ const creds = {
 const FTX_INSTANCE = new FTX(creds);
 
 // convert 1 cent to btc
-const FROM = 'USD';
-const TO = 'BTC';
-const ORDERSIZE = 0.01;
-
-// run the script every wednesday
-// https://crontab.guru/
-const SCHEDULE = '0 0 * * 2';
+const FROM = process.env.KEY;
+const TO = process.env.TO;
+const ORDERSIZE = process.env.ORDERSIZE;
+const SCHEDULE = process.env.SCHEDULE;
 
 async function main(_from, _to, _size) {
     // if all the arguments are met

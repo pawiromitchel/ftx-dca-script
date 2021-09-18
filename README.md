@@ -11,25 +11,27 @@ npm install
 
 2. request a API from your [FTX account](https://ftx.com/#a=4341346)
 3. create a `.env` file based on the `.env.example`
-```
-KEY=
-SECRET=
-SUBACCOUNT=
-```
-
 4. modify the parameters in the `app.js`
-```js
-...
-// convert 1 cent to btc
-const FROM = 'USD';
-const TO = 'BTC';
-const ORDERSIZE = 0.01;
-...
+
+*This example will convert 100 USD into BTC every Tuesday*
+```bash
+# ftx api creds
+KEY=key1
+SECRET=secret1
+SUBACCOUNT=subaccount1
+
+# settings 
+FROM=USD
+TO=BTC
+ORDERSIZE=100
+
+# cron schedule (https://crontab.guru/examples.html)
+SCHEDULE=0 0 * * 2
+```
+5. run the script
+```bash
+node app.js
 ```
 
-5. at the moment the bot buys every wednesday, the schedule is based on UNIX cronjobs (https://crontab.guru/)
-```js
-...
-const SCHEDULE = '0 0 * * 2';
-...
-```
+*Cron syntax cheatsheet*
+<img src="https://i.stack.imgur.com/89z4w.png">
