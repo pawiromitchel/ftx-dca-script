@@ -1,7 +1,12 @@
 # Simple DCA script for FTX
+A simple script to automate the buying or selling process. Just run the script on your desired server and forget about it 💤
 
-Made with the FTX api to schedule automatic spot conversions
+## Made with
+- [ftx-api-rest-extended](https://www.npmjs.com/package/ftx-api-rest-extended), for interacting with the FTX Exchange
+- [node-cron](https://www.npmjs.com/package/node-cron), for the scheduler
+- [dotenv](https://www.npmjs.com/package/dotenv), for parsing the configurations within .env file
 
+## Installing
 1. clone and install the npm packages
 ```bash
 git clone https://github.com/pawiromitchel/ftx-dca-bot
