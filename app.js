@@ -11,7 +11,7 @@ const creds = {
 const FTX_INSTANCE = new FTX(creds);
 
 // convert 1 cent to btc
-const FROM = process.env.KEY;
+const FROM = process.env.FROM;
 const TO = process.env.TO;
 const ORDERSIZE = process.env.ORDERSIZE;
 const SCHEDULE = process.env.SCHEDULE;
