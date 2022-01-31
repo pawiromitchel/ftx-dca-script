@@ -39,5 +39,17 @@ SCHEDULE=0 0 * * 2
 node app.js
 ```
 
+## Limit orders
+There's a sample code in the `app.js` you can check out how to place a limit order `5%` below the market price
+
+```js
+const pair = `${_to}/${_from}`; // this will create the pair BTC/USD for example
+const priceReq = await FTX_INSTANCE.getPrice(pair);
+const price = priceReq.price * (95 / 100); //  place order 5% under market price
+const sizeInX = _size / price;  // convert the usd to x
+const placeOrder = await FTX_INSTANCE.createOrder(sizeInX, pair, "buy", "limit", price);
+```
+***Market orders have a minimum size (around $3), you can't swap cents like OTC***
+
 *Cron syntax cheatsheet*
 <img src="https://i.stack.imgur.com/89z4w.png">
