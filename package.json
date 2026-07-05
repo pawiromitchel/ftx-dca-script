@@ -20,6 +20,6 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "ftx-api-rest-extended": "^1.1.1",
-    "node-cron": "^3.0.0"
+    "node-cron": "^4.0.0"
   }
 }
